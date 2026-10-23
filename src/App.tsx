@@ -11,6 +11,8 @@ import LawyerProfile from "./pages/LawyerProfile";
 import Contact from "./pages/Contacts";
 import RequireAdmin from "./components/admin/RequireAdmin";
 import { AdminAuthProvider } from "./contexts/AdminAuthProvider";
+import Seo from "./components/Seo";
+import { firm } from "./data/firm";
 
 const AdminLoginPage = lazy(() => import("./pages/admin/AdminLoginPage"));
 const AdminDashboard = lazy(() => import("./pages/admin/AdminDashboard"));
@@ -31,18 +33,29 @@ function ScrollToTop() {
   return null;
 }
 
-function NotFound() {
+function NotFound({ path }: { path: string }) {
   return (
-    <main className="not-found">
-      <div className="container">
-        <span className="eyebrow">404 — PAGE NOT FOUND</span>
-        <h1>This page doesn't exist.</h1>
-        <p>Please use the navigation to find what you're looking for.</p>
-        <a href="/" className="button button-dark">
-          Return Home
-        </a>
-      </div>
-    </main>
+    <>
+      <Seo
+        page={{
+          path,
+          title: `Page Not Found | ${firm.name}`,
+          description: `The requested page could not be found on the ${firm.name} website.`,
+        }}
+        noindex
+        includeFirmSchema={false}
+      />
+      <main className="not-found">
+        <div className="container">
+          <span className="eyebrow">404 — PAGE NOT FOUND</span>
+          <h1>This page doesn't exist.</h1>
+          <p>Please use the navigation to find what you're looking for.</p>
+          <a href="/" className="button button-dark">
+            Return Home
+          </a>
+        </div>
+      </main>
+    </>
   );
 }
 
@@ -55,6 +68,17 @@ export default function App() {
       <>
         <ScrollToTop />
         {!isAdminRoute && <Navbar />}
+        {isAdminRoute && (
+          <Seo
+            page={{
+              path: pathname,
+              title: `Administration | ${firm.name}`,
+              description: "Authorized lawyer profile administration.",
+            }}
+            noindex
+            includeFirmSchema={false}
+          />
+        )}
 
         <Routes>
           <Route path="/" element={<Home />} />
@@ -70,7 +94,7 @@ export default function App() {
             <Route path="lawyers/:lawyerId/edit" element={<Suspense fallback={<AdminRouteFallback />}><LawyerEditorPage /></Suspense>} />
             <Route path="lawyers/:lawyerId/preview" element={<Suspense fallback={<AdminRouteFallback />}><AdminPreviewPage /></Suspense>} />
           </Route>
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFound path={pathname} />} />
         </Routes>
 
         {!isAdminRoute && <Footer />}

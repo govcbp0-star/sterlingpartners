@@ -3,6 +3,8 @@ import { useState, type FormEvent } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { config } from "../config";
 import { firm } from "../data/firm";
+import Seo from "../components/Seo";
+import { seoPages } from "../seoConfig";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -66,6 +68,7 @@ export default function Contact() {
 
   return (
     <main>
+      <Seo page={seoPages.contact} />
       <section className="page-hero">
         <div className="container">
           <span className="eyebrow">WE'RE HERE TO HELP</span>

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Mail, ArrowRight } from "lucide-react";
 import LawyerPortrait from "../components/LawyerPortrait";
 import { usePublishedLawyers } from "../hooks/usePublishedLawyers";
+import Seo from "../components/Seo";
+import { seoPages } from "../seoConfig";
 
 export default function Team() {
   const { profiles, loading, error, invalidCount, retry } = usePublishedLawyers();
@@ -16,6 +18,7 @@ export default function Team() {
 
   return (
     <main>
+      <Seo page={seoPages.team} />
       <section className="page-hero">
         <div className="container">
           <span className="eyebrow">THE PEOPLE BEHIND THE PRACTICE</span>

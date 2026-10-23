@@ -9,6 +9,8 @@ import {
   practiceAreas,
 } from "../data/firmContent";
 import { firm } from "../data/firm";
+import Seo from "../components/Seo";
+import { seoPages } from "../seoConfig";
 
 const heroImages = [
   "/images/hero1.webp",
@@ -32,6 +34,7 @@ export default function Home() {
 
   return (
     <main>
+      <Seo page={seoPages.home} />
       <section className="hero" aria-labelledby="home-heading">
         {heroImages.map((image, index) => (
           <div

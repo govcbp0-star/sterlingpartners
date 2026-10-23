@@ -1,6 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { firm } from "../data/firm";
+import Seo from "../components/Seo";
+import { seoPages } from "../seoConfig";
 import {
   aboutValues,
   firmHighlights,
@@ -11,6 +13,7 @@ import {
 export default function About() {
   return (
     <main>
+      <Seo page={seoPages.about} />
       <section className="page-hero" aria-labelledby="about-heading">
         <div className="container">
           <span className="eyebrow">GET TO KNOW US</span>

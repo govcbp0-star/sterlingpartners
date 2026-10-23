@@ -1,23 +1,39 @@
 import { Link, useParams } from "react-router-dom";
 import { Mail, ArrowLeft } from "lucide-react";
 import LawyerPortrait from "../components/LawyerPortrait";
+import Seo from "../components/Seo";
+import { config } from "../config";
+import { firm } from "../data/firm";
 import { usePublishedLawyers } from "../hooks/usePublishedLawyers";
+import { buildLawyerPersonStructuredData, createLawyerSeoPage } from "../seoConfig";
 
 export default function LawyerProfile() {
   const { slug } = useParams();
   const { profiles, loading, error, retry } = usePublishedLawyers();
+  const path = `/team/${encodeURIComponent(slug ?? "")}`;
+  const fallbackPage = {
+    path,
+    title: `Lawyer Profile | ${firm.name}`,
+    description: `View lawyer profiles and practice areas at ${firm.name}.`,
+  };
 
   if (loading) {
-    return <main className="section-padding container"><p role="status">Loading lawyer profile…</p></main>;
+    return <>
+      <Seo page={fallbackPage} noindex includeFirmSchema={false} />
+      <main className="section-padding container"><p role="status">Loading lawyer profile…</p></main>
+    </>;
   }
 
   if (error) {
     return (
-      <main className="section-padding container lawyer-data-message is-error" role="alert">
-        <h1>Profile unavailable</h1>
-        <p>{error}</p>
-        <button className="button button-dark" type="button" onClick={retry}>Try again</button>
-      </main>
+      <>
+        <Seo page={fallbackPage} noindex includeFirmSchema={false} />
+        <main className="section-padding container lawyer-data-message is-error" role="alert">
+          <h1>Profile unavailable</h1>
+          <p>{error}</p>
+          <button className="button button-dark" type="button" onClick={retry}>Try again</button>
+        </main>
+      </>
     );
   }
 
@@ -25,16 +41,32 @@ export default function LawyerProfile() {
 
   if (!lawyer) {
     return (
-      <main className="section-padding container">
-        <h1>Lawyer Not Found</h1>
-        <p>The requested lawyer profile could not be found or is not published.</p>
-        <Link to="/team" className="button button-dark">Return to Our Lawyers</Link>
-      </main>
+      <>
+        <Seo page={fallbackPage} noindex includeFirmSchema={false} />
+        <main className="section-padding container">
+          <h1>Lawyer Not Found</h1>
+          <p>The requested lawyer profile could not be found or is not published.</p>
+          <Link to="/team" className="button button-dark">Return to Our Lawyers</Link>
+        </main>
+      </>
     );
   }
 
+  const page = createLawyerSeoPage(lawyer, firm.name);
+  const personSchema = buildLawyerPersonStructuredData({
+    siteUrl: config.siteUrl,
+    firmName: firm.name,
+    path: page.path,
+    name: lawyer.name,
+    title: lawyer.title,
+    shortBio: lawyer.shortBio,
+    specialties: lawyer.specialties,
+    email: lawyer.email,
+  });
+
   return (
     <main className="section-padding">
+      <Seo page={page} openGraphType="profile" structuredData={[personSchema]} />
       <div className="container">
         <Link to="/team" className="text-link">
           <ArrowLeft size={16} aria-hidden="true" /> Back to Our Lawyers

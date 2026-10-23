@@ -7,6 +7,8 @@ import {
   BriefcaseBusiness,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import Seo from "../components/Seo";
+import { seoPages } from "../seoConfig";
 
 const services = [
   {
@@ -50,6 +52,7 @@ const services = [
 export default function Services() {
   return (
     <main>
+      <Seo page={seoPages.services} />
       <section className="page-hero">
         <div className="container">
           <span className="eyebrow">OUR PRACTICE AREAS</span>
