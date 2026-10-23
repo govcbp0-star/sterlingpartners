@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Scale } from "lucide-react";
+import { Mail, MapPin, Phone, Scale } from "lucide-react";
 import { config } from "../../config";
 import { firm } from "../../data/firm";
 

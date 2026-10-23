@@ -14,7 +14,7 @@ export default function About() {
       <section className="page-hero" aria-labelledby="about-heading">
         <div className="container">
           <span className="eyebrow">GET TO KNOW US</span>
-          <h1 id="about-heading">About Sterling Legal Partners</h1>
+          <h1 id="about-heading">About Sterling Chambers</h1>
           <p>
             Professional legal guidance grounded in preparation, integrity,
             and a commitment to our clients.

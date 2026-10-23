@@ -87,7 +87,7 @@ export default function AdminDashboard() {
       <div className="admin-container">
         <header className="admin-header">
           <div>
-            <span className="eyebrow">STERLING LEGAL PARTNERS</span>
+            <span className="eyebrow">STERLING CHAMBERS</span>
             <h1>Lawyer profiles</h1>
             <p>Manage the public team and profile pages.</p>
           </div>

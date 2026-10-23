@@ -1,11 +1,6 @@
 
 import { useState, type FormEvent } from "react";
-import {
-  Mail,
-  MapPin,
-  Phone,
-  MessageCircle,
-} from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { config } from "../config";
 import { firm } from "../data/firm";
 
@@ -120,21 +115,6 @@ export default function Contact() {
                 <p>{firm.address}</p>
               </div>
             </div>
-
-            {config.firmWhatsApp.replace(/\D/g, "") && (
-              <a
-                className="contact-detail"
-                href={`https://wa.me/${config.firmWhatsApp.replace(/\D/g, "")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span><MessageCircle size={21} aria-hidden="true" /></span>
-                <div>
-                  <strong>WhatsApp</strong>
-                  <p>Message our firm</p>
-                </div>
-              </a>
-            )}
 
           </div>
 

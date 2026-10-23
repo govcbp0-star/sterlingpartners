@@ -70,7 +70,7 @@ export default function AdminLoginPage() {
   return (
     <main className="admin-page admin-login-page">
       <section className="admin-login-card" aria-labelledby="admin-login-heading">
-        <Link to="/" className="admin-brand">Sterling Legal Partners</Link>
+        <Link to="/" className="admin-brand">Sterling Chambers</Link>
         <span className="eyebrow">ADMINISTRATION</span>
         <h1 id="admin-login-heading">Sign in to manage profiles</h1>
         <p className="admin-muted">Use the email and password for the authorized Firebase account.</p>

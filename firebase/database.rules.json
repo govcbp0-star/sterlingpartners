@@ -34,12 +34,6 @@
         "email": {
           ".validate": "newData.isString()"
         },
-        "phone": {
-          ".validate": "newData.isString()"
-        },
-        "whatsapp": {
-          ".validate": "newData.isString()"
-        },
         "qualifications": {
           "$index": {
             ".validate": "newData.isString()"

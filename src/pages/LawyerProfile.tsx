@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { Mail, Phone, MessageCircle, ArrowLeft } from "lucide-react";
+import { Mail, ArrowLeft } from "lucide-react";
 import LawyerPortrait from "../components/LawyerPortrait";
 import { usePublishedLawyers } from "../hooks/usePublishedLawyers";
 
@@ -74,17 +74,11 @@ export default function LawyerProfile() {
               </>
             )}
 
-            {(lawyer.phone || lawyer.email || lawyer.whatsapp) && (
+            {lawyer.email && (
               <>
                 <h2>Contact {lawyer.name.split(" ")[0]}</h2>
                 <div className="profile-contact">
-                  {lawyer.phone && <a href={"tel:" + lawyer.phone}><Phone size={18} aria-hidden="true" /> Call</a>}
-                  {lawyer.email && <a href={"mailto:" + lawyer.email}><Mail size={18} aria-hidden="true" /> Email</a>}
-                  {lawyer.whatsapp && (
-                    <a href={"https://wa.me/" + lawyer.whatsapp.replace(/\D/g, "")} target="_blank" rel="noopener noreferrer">
-                      <MessageCircle size={18} aria-hidden="true" /> WhatsApp
-                    </a>
-                  )}
+                  <a href={"mailto:" + lawyer.email}><Mail size={18} aria-hidden="true" /> Email</a>
                 </div>
               </>
             )}

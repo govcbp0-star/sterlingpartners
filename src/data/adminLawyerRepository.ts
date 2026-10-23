@@ -100,8 +100,6 @@ export async function saveLawyerProfile(
   };
 
   if (input.email?.trim()) profile.email = input.email.trim();
-  if (input.phone?.trim()) profile.phone = input.phone.trim();
-  if (input.whatsapp?.trim()) profile.whatsapp = input.whatsapp.trim();
   if (input.imageDataUrl) profile.imageDataUrl = input.imageDataUrl;
 
   const { createdAt, updatedAt, ...publicProjection } = profile;

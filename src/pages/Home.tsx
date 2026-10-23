@@ -43,14 +43,14 @@ export default function Home() {
         ))}
         <div className="hero-overlay" aria-hidden="true" />
         <div className="container hero-content">
-          <span className="eyebrow">STERLING LEGAL PARTNERS</span>
+          <span className="eyebrow">{firm.name.toUpperCase()}</span>
           <h1 id="home-heading">
             Trusted Legal Guidance.
             <br />
             <span>Thoughtful Representation.</span>
           </h1>
           <p>
-            Sterling Legal Partners provides legal guidance and representation
+            {firm.name} provides legal guidance and representation
             to individuals, families, entrepreneurs, and businesses. We approach
             each matter with professionalism, careful analysis, and a commitment
             to helping our clients navigate complex legal challenges.
@@ -125,7 +125,7 @@ export default function Home() {
         <div className="container">
           <div className="section-heading">
             <span className="eyebrow">OUR APPROACH</span>
-            <h2 id="principles-heading">Why Work With Sterling Legal Partners</h2>
+            <h2 id="principles-heading">Why Work With {firm.name}</h2>
             <p>
               A considered approach to understanding your needs, explaining
               options, and preparing for the work ahead.
@@ -213,7 +213,7 @@ export default function Home() {
             <span className="eyebrow">ABOUT THE FIRM</span>
             <h2 id="firm-intro-heading">A Clear and Considered Approach to Legal Work</h2>
             <p>
-              Since its establishment in 2012, Sterling Legal Partners has
+              Since its establishment in 2012, {firm.name} has
               focused on helping individuals and businesses address their legal
               needs with clarity and professionalism. Our work spans a range of
               legal practice areas, bringing together careful preparation,

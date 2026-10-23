@@ -1,6 +1,6 @@
 export const firm = {
-  name: "Sterling Legal Partners",
-  shortName: "STERLING",
+  name: "Sterling Chambers",
+  shortName: "STERLING CHAMBERS",
   tagline: "Trusted Counsel. Exceptional Advocacy.",
   description:
     "Providing thoughtful legal guidance and dedicated representation to individuals, businesses, and institutions.",

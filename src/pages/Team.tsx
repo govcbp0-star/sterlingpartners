@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MessageCircle, ArrowRight } from "lucide-react";
+import { Mail, ArrowRight } from "lucide-react";
 import LawyerPortrait from "../components/LawyerPortrait";
 import { usePublishedLawyers } from "../hooks/usePublishedLawyers";
 
@@ -75,24 +75,9 @@ export default function Team() {
                     </Link>
 
                     <div className="lawyer-contact">
-                      {lawyer.phone && (
-                        <a href={"tel:" + lawyer.phone} aria-label={"Call " + lawyer.name}>
-                          <Phone size={17} aria-hidden="true" /> Call
-                        </a>
-                      )}
                       {lawyer.email && (
                         <a href={"mailto:" + lawyer.email} aria-label={"Email " + lawyer.name}>
                           <Mail size={17} aria-hidden="true" /> Email
-                        </a>
-                      )}
-                      {lawyer.whatsapp && (
-                        <a
-                          href={"https://wa.me/" + lawyer.whatsapp.replace(/\D/g, "")}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={"WhatsApp " + lawyer.name}
-                        >
-                          <MessageCircle size={17} aria-hidden="true" /> WhatsApp
                         </a>
                       )}
                     </div>

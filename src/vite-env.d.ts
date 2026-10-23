@@ -1,7 +1,6 @@
 interface ImportMetaEnv {
   readonly VITE_WEB3FORMS_ACCESS_KEY: string;
   readonly VITE_FIRM_PHONE: string;
-  readonly VITE_FIRM_WHATSAPP: string;
   readonly VITE_FIRM_EMAIL: string;
   readonly VITE_FIREBASE_API_KEY: string;
   readonly VITE_FIREBASE_AUTH_DOMAIN: string;

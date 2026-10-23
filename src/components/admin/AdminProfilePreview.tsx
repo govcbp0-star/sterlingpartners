@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, Mail, Phone, MessageCircle } from "lucide-react";
+import { ArrowLeft, Mail } from "lucide-react";
 import LawyerPortrait from "../LawyerPortrait";
 import type { LawyerProfile } from "../../data/lawyerProfile";
 
@@ -56,17 +56,11 @@ export default function AdminProfilePreview({ profile, backTo, backLabel, onBack
             </>
           )}
 
-          {(profile.phone || profile.email || profile.whatsapp) && (
+          {profile.email && (
             <>
               <h2>Contact {profile.name.split(" ")[0]}</h2>
               <div className="profile-contact">
-                {profile.phone && <a href={"tel:" + profile.phone}><Phone size={18} aria-hidden="true" /> Call</a>}
-                {profile.email && <a href={"mailto:" + profile.email}><Mail size={18} aria-hidden="true" /> Email</a>}
-                {profile.whatsapp && (
-                  <a href={"https://wa.me/" + profile.whatsapp.replace(/\D/g, "")} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle size={18} aria-hidden="true" /> WhatsApp
-                  </a>
-                )}
+                <a href={"mailto:" + profile.email}><Mail size={18} aria-hidden="true" /> Email</a>
               </div>
             </>
           )}

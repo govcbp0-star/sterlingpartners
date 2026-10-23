@@ -7,8 +7,6 @@ export interface LawyerProfile {
   bio: string;
   specialties: string[];
   email?: string;
-  phone?: string;
-  whatsapp?: string;
   qualifications: string[];
   memberships: string[];
   imageDataUrl?: string;
@@ -55,7 +53,7 @@ export function parseLawyerProfile(
     return null;
   }
 
-  for (const field of ["email", "phone", "whatsapp", "imageDataUrl"]) {
+  for (const field of ["email", "imageDataUrl"]) {
     if (record[field] !== undefined && typeof record[field] !== "string") return null;
   }
 
@@ -78,7 +76,7 @@ export function parseLawyerProfile(
     updatedAt: typeof record.updatedAt === "number" ? record.updatedAt : 0,
   };
 
-  for (const field of ["email", "phone", "whatsapp", "imageDataUrl"] as const) {
+  for (const field of ["email", "imageDataUrl"] as const) {
     const candidate = record[field];
     if (typeof candidate === "string" && candidate.trim()) profile[field] = candidate;
   }

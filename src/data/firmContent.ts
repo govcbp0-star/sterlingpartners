@@ -143,7 +143,7 @@ export const firmMilestones: FirmMilestone[] = [
   {
     period: "2012",
     title: "The Beginning",
-    description: "Sterling Legal Partners is established.",
+    description: "Sterling Chambers is established.",
   },
   {
     period: "Practice development",

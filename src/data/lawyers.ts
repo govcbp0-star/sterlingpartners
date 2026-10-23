@@ -6,8 +6,6 @@ export interface Lawyer {
   bio: string;
   specializations: string[];
   email: string;
-  phone: string;
-  whatsapp: string;
   photo: string;
 }
 
@@ -20,8 +18,6 @@ export const lawyers: Lawyer[] = [
     bio: "Provides legal guidance in commercial matters and dispute resolution.",
     specializations: ["Corporate Law", "Commercial Litigation"],
     email: "john@example.com",
-    phone: "+233000000001",
-    whatsapp: "233000000001",
     photo: "/images/lawyers/lawyer-1.webp",
   },
   {
@@ -32,8 +28,6 @@ export const lawyers: Lawyer[] = [
     bio: "Focuses on property matters, contracts, and legal advisory work.",
     specializations: ["Property Law", "Contracts"],
     email: "ama@example.com",
-    phone: "+233000000002",
-    whatsapp: "233000000002",
     photo: "/images/lawyers/lawyer-2.webp",
   },
 
@@ -45,8 +39,6 @@ export const lawyers: Lawyer[] = [
     bio: "Focuses on property matters, contracts, and legal advisory work.",
     specializations: ["Property Law", "Contracts"],
     email: "aato@example.com",
-    phone: "+233000000003",
-    whatsapp: "233000000003",
     photo: "/images/lawyers/lawyer-3.webp",
   },
 ];

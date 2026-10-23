@@ -1,4 +1,4 @@
-﻿# Sterling Legal Partners
+# Sterling Chambers
 
 A responsive React and TypeScript website built with Vite. Public lawyer profiles are read from Firebase Realtime Database. A single Firebase Authentication account can manage private drafts and publish profiles through the /admin dashboard.
 

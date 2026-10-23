@@ -19,8 +19,6 @@ interface FormValues {
   bio: string;
   specialties: string;
   email: string;
-  phone: string;
-  whatsapp: string;
   qualifications: string;
   memberships: string;
   sortOrder: string;
@@ -51,8 +49,6 @@ function toFormValues(profile: LawyerProfile | undefined, nextOrder: number): Fo
     bio: profile?.bio ?? "",
     specialties: profile?.specialties.join(", ") ?? "",
     email: profile?.email ?? "",
-    phone: profile?.phone ?? "",
-    whatsapp: profile?.whatsapp ?? "",
     qualifications: profile?.qualifications.join("\n") ?? "",
     memberships: profile?.memberships.join("\n") ?? "",
     sortOrder: String(profile?.sortOrder ?? nextOrder),
@@ -114,8 +110,6 @@ export default function LawyerProfileForm({ profiles, initialProfile, onSave }: 
       bio,
       specialties,
       email: email || undefined,
-      phone: values.phone.trim() || undefined,
-      whatsapp: values.whatsapp.trim() || undefined,
       qualifications: listFromText(values.qualifications),
       memberships: listFromText(values.memberships),
       imageDataUrl: values.imageDataUrl,
@@ -262,16 +256,6 @@ export default function LawyerProfileForm({ profiles, initialProfile, onSave }: 
         <label className="admin-field">
           <span>Professional email</span>
           <input type="email" autoComplete="email" value={values.email} onChange={(event) => update("email", event.target.value)} />
-        </label>
-
-        <label className="admin-field">
-          <span>Phone number</span>
-          <input type="tel" autoComplete="tel" value={values.phone} onChange={(event) => update("phone", event.target.value)} />
-        </label>
-
-        <label className="admin-field">
-          <span>WhatsApp number</span>
-          <input type="tel" value={values.whatsapp} onChange={(event) => update("whatsapp", event.target.value)} />
         </label>
 
         <label className="admin-field">

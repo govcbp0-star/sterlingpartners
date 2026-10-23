@@ -1,15 +1,15 @@
-﻿# Lawyer dashboard and Firebase setup
+# Lawyer dashboard and Firebase setup
 
 The public site reads published lawyer profiles from /lawyersPublic. The /admin dashboard uses Firebase Authentication and manages drafts and complete profiles in /lawyersAdmin. Public visitors never read the private branch.
 
 ## Configure Firebase
 
-1. Create or select the Sterling Legal Partners Firebase project and add a Web App.
+1. Create or select the Sterling Chambers Firebase project and add a Web App.
 2. Enable Email/Password sign-in in Firebase Authentication.
 3. Create the one admin account manually in Authentication. This project has no public registration page.
 4. Create a Realtime Database and note its URL.
 5. Copy .env.example to .env and fill in the Firebase web app settings, database URL, and VITE_ADMIN_UID.
-6. Configure the Web3Forms access key and the firm phone, WhatsApp, and email settings in .env.
+6. Configure the Web3Forms access key and firm phone and email in .env.
 7. Restart the Vite development server after changing environment settings.
 
 All VITE_ settings are included in client-side JavaScript. Treat them as public configuration, not as secrets. Do not add service-account JSON, private keys, or database secrets to this frontend.
