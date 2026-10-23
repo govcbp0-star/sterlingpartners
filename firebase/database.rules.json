@@ -1,0 +1,72 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "lawyersPublic": {
+      ".read": true,
+      ".write": "auth !== null && auth.uid === 'xcd2RcSXUqP8WCPDcuXTVDhRYIz1'",
+      ".indexOn": ["sortOrder"],
+      "$profileId": {
+        ".validate": "newData.hasChildren(['id', 'slug', 'name', 'title', 'shortBio', 'bio', 'specialties', 'published', 'sortOrder']) && newData.child('published').val() === true",
+        "id": {
+          ".validate": "newData.isString() && newData.val() === $profileId"
+        },
+        "slug": {
+          ".validate": "newData.isString() && newData.val().matches(/^[a-z0-9]+(-[a-z0-9]+)*$/)"
+        },
+        "name": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "title": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "shortBio": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "bio": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "specialties": {
+          "$index": {
+            ".validate": "newData.isString() && newData.val().length > 0"
+          }
+        },
+        "email": {
+          ".validate": "newData.isString()"
+        },
+        "phone": {
+          ".validate": "newData.isString()"
+        },
+        "whatsapp": {
+          ".validate": "newData.isString()"
+        },
+        "qualifications": {
+          "$index": {
+            ".validate": "newData.isString()"
+          }
+        },
+        "memberships": {
+          "$index": {
+            ".validate": "newData.isString()"
+          }
+        },
+        "imageDataUrl": {
+          ".validate": "newData.isString() && newData.val().length <= 368640"
+        },
+        "published": {
+          ".validate": "newData.isBoolean() && newData.val() === true"
+        },
+        "sortOrder": {
+          ".validate": "newData.isNumber() && newData.val() >= 0"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    },
+    "lawyersAdmin": {
+      ".read": "auth !== null && auth.uid === 'xcd2RcSXUqP8WCPDcuXTVDhRYIz1'",
+      ".write": "auth !== null && auth.uid === 'xcd2RcSXUqP8WCPDcuXTVDhRYIz1'"
+    }
+  }
+}
