@@ -1,6 +1,6 @@
 
 import { useState, type FormEvent } from "react";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Headphones, Mail, MapPin, Phone } from "lucide-react";
 import { config } from "../config";
 import { firm } from "../data/firm";
 import Seo from "../components/Seo";
@@ -118,6 +118,29 @@ export default function Contact() {
                 <p>{firm.address}</p>
               </div>
             </div>
+
+            <section className="office-hours-card" aria-labelledby="office-hours-title">
+              <div className="office-hours-heading">
+                <Clock size={20} aria-hidden="true" />
+                <h3 id="office-hours-title">Office Hours</h3>
+              </div>
+
+              <dl className="office-hours-list">
+                {firm.officeHours.map(({ days, hours }) => (
+                  <div className="office-hours-row" key={days}>
+                    <dt>{days}</dt>
+                    <dd>{hours}</dd>
+                  </div>
+                ))}
+              </dl>
+
+              <div className="office-receptionist">
+                <Headphones size={19} aria-hidden="true" />
+                <p><strong>AI Phone Receptionist:</strong> {firm.receptionistAvailability}</p>
+              </div>
+
+              <p className="office-hours-note">{firm.officeHoursNote}</p>
+            </section>
 
           </div>
 
