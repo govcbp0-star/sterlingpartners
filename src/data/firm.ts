@@ -4,7 +4,7 @@ export const firm = {
   tagline: "Trusted Counsel. Exceptional Advocacy.",
   description:
     "Providing thoughtful legal guidance and dedicated representation to individuals, businesses, and institutions.",
-  address: "Bakersfield, California",
+  address: "Heathrow, London",
   navigation: [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
