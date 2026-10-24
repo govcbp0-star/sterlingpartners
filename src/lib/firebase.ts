@@ -30,7 +30,7 @@ export function getFirebaseSetupMessage() {
   }
 
   if (!adminUid) {
-    return "Firebase is connected, but VITE_ADMIN_UID is not configured. Add the authorized admin account UID before signing in.";
+    return "Firebase is connected, but VITE_ADMIN_UID is not configured. Add the authorized administrator UID before signing in.";
   }
 
   return null;

@@ -73,7 +73,7 @@ export default function AdminLoginPage() {
         <Link to="/" className="admin-brand">Sterling Chambers</Link>
         <span className="eyebrow">ADMINISTRATION</span>
         <h1 id="admin-login-heading">Sign in to manage profiles</h1>
-        <p className="admin-muted">Use the email and password for the authorized Firebase account.</p>
+        <p className="admin-muted">Use the email and password for the authorized Firebase administrator account.</p>
 
         {setupMessage && <p className="admin-notice is-warning" role="status">{setupMessage}</p>}
         {!adminUid && !setupMessage && (
