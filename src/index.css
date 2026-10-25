@@ -1434,6 +1434,13 @@ button {
     justify-content: center;
   }
 
+  .lawyer-contact a,
+  .profile-contact a {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
   .profile-layout {
     grid-template-columns: minmax(0, 1fr);
     gap: 30px;
