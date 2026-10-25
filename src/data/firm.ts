@@ -10,7 +10,6 @@ export const firm = {
     { days: "Saturday", hours: "9:00 AM – 1:00 PM" },
     { days: "Sunday & Public Holidays", hours: "Closed" },
   ],
-  receptionistAvailability: "Available 24/7 to receive calls and record enquiries.",
   officeHoursNote:
     "All office hours are in UK local time (GMT). Appointments outside regular office hours may be arranged in advance.",
   navigation: [

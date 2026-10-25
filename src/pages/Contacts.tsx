@@ -1,6 +1,6 @@
 
 import { useState, type FormEvent } from "react";
-import { Clock, Headphones, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { config } from "../config";
 import { firm } from "../data/firm";
 import Seo from "../components/Seo";
@@ -133,11 +133,6 @@ export default function Contact() {
                   </div>
                 ))}
               </dl>
-
-              <div className="office-receptionist">
-                <Headphones size={19} aria-hidden="true" />
-                <p><strong>AI Phone Receptionist:</strong> {firm.receptionistAvailability}</p>
-              </div>
 
               <p className="office-hours-note">{firm.officeHoursNote}</p>
             </section>

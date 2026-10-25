@@ -1042,29 +1042,11 @@ button {
   text-align: right;
 }
 
-.office-receptionist {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-top: 16px;
-  color: #9d7b3e;
-}
-
-.office-receptionist p,
 .office-hours-note {
   margin: 0;
   color: var(--muted);
   font-size: 12px;
   line-height: 1.7;
-}
-
-.office-receptionist p strong {
-  color: var(--navy);
-}
-
-.office-receptionist svg {
-  flex: 0 0 auto;
-  margin-top: 2px;
 }
 
 .office-hours-note {
